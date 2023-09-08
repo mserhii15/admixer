@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.block {
+  grid-template-columns: 220px auto;
+  grid-gap: 32px;
+  display: grid;
+  height: 100%;
+}
+
+.wrapper {
+  padding-top: 20px;
+}

@@ -1,0 +1,28 @@
+@import "assets/styles/index";
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-color);
+}
+
+h1,h2 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+.icon {
+  display: inline-block;
+  stroke: currentColor;
+  fill: currentColor;
+  stroke-width: 0;
+  height: 1em;
+  width: 1em;
+}

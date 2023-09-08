@@ -1,0 +1,50 @@
+.wrapper {
+  padding: 20px 24px 0 20px;
+  position: relative;
+  height: 100%;
+}
+
+.block {
+  align-items: center;
+  display: flex;
+}
+
+.head {
+  margin-bottom: 32px;
+}
+
+.form {
+  flex-direction: column;
+  display: flex;
+}
+
+.content {
+  grid-template-columns: 302px 100px 100px;
+  grid-gap: 24px;
+  display: grid;
+}
+
+.footer {
+  border-top: 1px solid var(--grey-color);
+  background-color: white;
+  position: absolute;
+  padding: 18px 20px;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  button {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+.mat-divider {
+  width: calc(100% + 48px);
+  margin-right: -24px;
+  margin-left: -24px;
+}

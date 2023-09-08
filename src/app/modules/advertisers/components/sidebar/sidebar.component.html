@@ -1,0 +1,45 @@
+<div class="wrapper" *ngIf="item">
+  <div class="head">
+    <div class="block">
+      <button mat-icon-button (click)="close.emit()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <h2>Edit Advertiser: {{ item.name }}</h2>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+  <div class="form">
+    <form [formGroup]="form">
+      <div class="content">
+        <app-input type="text" label="Name" controlName="name"></app-input>
+        <app-input
+          type="text"
+          label="Country"
+          controlName="country"
+        ></app-input>
+        <app-input
+          type="number"
+          label="ID"
+          controlName="advertiserId"
+        ></app-input>
+      </div>
+      <app-input
+        type="number"
+        label="Campaign Count"
+        controlName="campaignCount"
+      ></app-input>
+      <app-input
+        type="number"
+        label="Impressions"
+        controlName="impressions"
+      ></app-input>
+      <app-input type="number" label="Profit" controlName="profit"></app-input>
+    </form>
+  </div>
+  <div class="footer">
+    <button mat-raised-button color="primary" class="button" (click)="submit()">
+      Save
+    </button>
+    <button mat-button color="primary" (click)="close.emit()">Cancel</button>
+  </div>
+</div>

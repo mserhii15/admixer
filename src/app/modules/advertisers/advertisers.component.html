@@ -1,0 +1,84 @@
+<mat-drawer-container class="container full-height">
+  <mat-drawer-content>
+    <h1>Advertisers</h1>
+    <div class="block">
+      <div class="input">
+        <svg class="icon icon-search">
+          <use xlink:href="#icon-search"></use>
+        </svg>
+        <input
+          placeholder="Search by name..."
+          (keyup)="applyFilter($event)"
+        />
+      </div>
+      <ng-container *ngIf="!loading; else elseTemplate">
+        <div class="table">
+          <table
+            (matSortChange)="sort($event)"
+            [dataSource]="sortedList"
+            mat-table
+            matSort
+          >
+            <ng-container matColumnDef="advertiserId">
+              <th mat-header-cell class="center-cell" *matHeaderCellDef>
+                Advertiser
+              </th>
+              <td mat-cell class="center-cell" *matCellDef="let element">
+                {{ element.advertiserId }}
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th mat-header-cell class="center-cell" *matHeaderCellDef>
+                Name
+              </th>
+              <td mat-cell class="center-cell" *matCellDef="let element">
+                {{ element.name }}
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="profit">
+              <th
+                mat-sort-header="profit"
+                class="center-cell"
+                *matHeaderCellDef
+                mat-header-cell
+              >
+                Profit
+              </th>
+              <td mat-cell class="center-cell" *matCellDef="let element">
+                {{ element.profit }}
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr
+              *matRowDef="let row; columns: displayedColumns"
+              (click)="openSidebar(row)"
+              class="row"
+              mat-row
+            ></tr>
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell center-text" colspan="4">
+                <span> No results found :( </span> <br />
+                <span> Please try again </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ng-container>
+      <ng-template #elseTemplate>Loading... </ng-template>
+    </div>
+    <app-popup
+      *ngIf="showPopup"
+      [message]="popupMessage"
+      (closePopup)="showPopup = false"
+    ></app-popup>
+  </mat-drawer-content>
+  <mat-drawer mode="over" position="end" #drawer>
+    <ng-container *ngIf="item">
+      <app-sidebar
+        [item]="item"
+        (status)="getStatus($event)"
+        (close)="drawer.close()"
+      ></app-sidebar>
+    </ng-container>
+  </mat-drawer>
+</mat-drawer-container>

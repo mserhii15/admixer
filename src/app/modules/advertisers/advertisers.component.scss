@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+
+table {
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 24px;
+}
+
+.center-cell {
+  vertical-align: middle;
+}
+
+.row {
+  border-bottom: 1px solid var(--grey-color);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--grey-color);
+  }
+}
+
+.table {
+  border: 1px solid var(--grey-color);
+  overflow-y: scroll;
+  border-radius: 4px;
+  max-height: 85vh;
+}
+
+input {
+  border: 1px solid var(--grey-color);
+  padding: 10px 10px 10px 44px;
+  border-radius: 4px;
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+}
+
+.input {
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 336px;
+}
+
+.icon {
+  color: var(--black-color);
+  top: calc(50% - 12px);
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.55;
+  left: 12px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+mat-drawer-container {
+  background-color: transparent;
+  padding-right: 24px;
+}
+
+mat-drawer-content {
+  padding-right: 24px;
+}
+
+.mat-row {
+  left: calc(50% - 55px);
+  position: absolute;
+  top: 114px;
+}
