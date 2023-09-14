@@ -7,7 +7,7 @@ This project is a client-side application for interacting with the Admixer API. 
 ## Requirements
 
 - Node.js
-- Angular (if your client-side application is built with Angular)
+- Angular
 
 ## Setup
 
