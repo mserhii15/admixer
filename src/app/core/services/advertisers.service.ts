@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IAdvertisers } from '../DTO';
+import { environment } from '../../../../environment';
 
 interface IResponse {
   status: string;
@@ -8,14 +9,13 @@ interface IResponse {
 
 @Injectable()
 export default class AdvertisersService {
-  private proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  private apiUrl = "http://integration-api-stage.admixer.net/TestTask";
-  private userId: number = 1124;
+  private apiUrl = environment.apiUrl;
+  private userId = environment.userId;
 
   constructor(private http: HttpClient) {}
 
   getAdvertisers() {
-    return this.http.post<IAdvertisers[]>('http://localhost:3000/TestTask/GetTestAdvertisers', { userId: this.userId });
+    return this.http.post<IAdvertisers[]>(`${this.apiUrl}/GetTestAdvertisers`, { userId: this.userId });
   }
 
   updateAdvertiser(profit: number, advertiserId: number) {

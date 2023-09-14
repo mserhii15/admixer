@@ -1,0 +1,7 @@
+{
+  "/TestTask/*": {
+    "target": "http://integration-api-stage.admixer.net",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

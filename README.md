@@ -19,17 +19,7 @@ This project is a client-side application for interacting with the Admixer API. 
    npm install
    ```
 
-2. **Start the proxy server:**
-
-   Navigate to the proxy server directory and run:
-
-   ```
-   node server.js
-   ```
-
-   The proxy server will start on `http://localhost:3000`.
-
-3. **Start the client-side application:**
+2. **Start the client-side application:**
 
    Navigate to the client-side application directory and run:
 
